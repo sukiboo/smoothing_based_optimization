@@ -12,10 +12,10 @@ class SmoothingBasedOptimization:
     def __init__(self, params):
         self.__dict__.update(params)
 
-    def minimize(self, fun, x0, plot=False):
+    def minimize(self, fun, x0, plot=False, disable_pbar=False):
         '''minimize the given function fun with the initial guess x0'''
         self.fun = fun
-        self.x = x0
+        self.x = x0.copy()
         self.dim = x0.size
 
         # establish search directions and quadrature points
@@ -24,7 +24,8 @@ class SmoothingBasedOptimization:
 
         # iteratively minimize the function
         self.vals = [self.fun(self.x)]
-        pbar = tqdm.trange(self.num_iters, ascii=True, postfix=f'value={self.vals[-1]: .2e}')
+        pbar = tqdm.trange(self.num_iters, ascii=True,
+                           postfix=f'value={self.vals[-1]: .2e}', disable=disable_pbar)
         for _ in pbar:
 
             # estimate smoothed directional derivative along each basis direction

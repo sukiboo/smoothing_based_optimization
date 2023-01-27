@@ -17,7 +17,7 @@ class InteractiveSmoothing:
         """Compute gaussian smoothing of the target function"""
         gh_roots, gh_weights = np.polynomial.hermite.hermgauss(self.num_quad)
         fun_vals = np.array([self.fun(self.x + p * self.sigma) for p in gh_roots])
-        fun_sigma = np.sum(gh_weights.reshape(-1,1) * fun_vals, axis=0) / np.sqrt(np.pi)
+        fun_sigma = np.matmul(gh_weights, fun_vals) / np.sqrt(np.pi)
         return fun_sigma
 
     def plot(self):
@@ -30,7 +30,7 @@ class InteractiveSmoothing:
                                         linewidth=3, label=f'{self.sigma:.2f}-smoothing')
         # configure slider for num_quad
         quad_axes = plt.axes([.2, .125, .6, .04])
-        self.quad_slider = Slider(quad_axes, 'num_quad', 1, 11, valinit=self.num_quad, valfmt='%d')
+        self.quad_slider = Slider(quad_axes, 'num_quad', 1, 51, valinit=self.num_quad, valfmt='%d')
         self.quad_slider.on_changed(self.plot_update)
         # configure slider for sigma
         sigma_axes = plt.axes([.2, .075, .6, .04])
