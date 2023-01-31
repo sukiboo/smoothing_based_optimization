@@ -2,7 +2,7 @@
 import numpy as np
 import tensorflow as tf
 
-from smoothing_based_optimization import SmoothingBasedOptimization
+from dgs import DirectionalGaussianSmoothing
 
 
 def tf_to_opt(model, data):
@@ -41,7 +41,6 @@ if __name__ == '__main__':
         tf.keras.layers.Input((None,1)),
         tf.keras.layers.Dense(10, activation='relu'),
         tf.keras.layers.Dense(10, activation='relu'),
-        tf.keras.layers.Dense(10, activation='relu'),
         tf.keras.layers.Dense(1, activation=None)])
     model.compile(loss='mse')
 
@@ -50,6 +49,6 @@ if __name__ == '__main__':
 
     # setup smoothing-based optimization
     params = {'sigma': .1, 'learning_rate': .01, 'quad_points': 5, 'num_iters': 100}
-    sbo = SmoothingBasedOptimization(params)
-    sbo.minimize(fun, x0, plot=True)
+    dgs = DirectionalGaussianSmoothing(params)
+    dgs.minimize(fun, x0, plot=True)
 

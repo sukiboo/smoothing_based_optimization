@@ -1,7 +1,7 @@
 
 import numpy as np
 
-from smoothing_based_optimization import SmoothingBasedOptimization
+from dgs import DirectionalGaussianSmoothing
 
 
 if __name__ == '__main__':
@@ -14,6 +14,6 @@ if __name__ == '__main__':
 
     # setup smoothing-based optimization
     params = {'sigma': .5, 'learning_rate': .1, 'quad_points': 5, 'num_iters': 500}
-    sbo = SmoothingBasedOptimization(params)
-    sbo.minimize(fun, x0, plot=True)
+    dgs = DirectionalGaussianSmoothing(params)
+    dgs.minimize(fun, x0, plot=True)
 

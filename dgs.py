@@ -1,3 +1,7 @@
+"""
+    implementation of the Directional Gaussian Smoothing algorithm
+    introduced in https://arxiv.org/pdf/2002.03001.pdf
+"""
 
 import numpy as np
 import tqdm
@@ -7,7 +11,7 @@ import seaborn as sns
 sns.set_theme(style='darkgrid', palette='muted', font='monospace')
 
 
-class SmoothingBasedOptimization:
+class DirectionalGaussianSmoothing:
 
     def __init__(self, params):
         self.__dict__.update(params)

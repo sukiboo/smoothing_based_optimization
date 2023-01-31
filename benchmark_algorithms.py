@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from smoothing_based_optimization import SmoothingBasedOptimization
+from dgs import DirectionalGaussianSmoothing
 
 sns.set_theme(style='darkgrid', palette='muted', font='monospace')
 
@@ -31,7 +31,7 @@ class BenchmarkAlgorithms:
         np.random.seed(random_seed)
         self.random_seed_list = np.random.randint(1e+9, size=num_tests)
         num_iters = 100
-        self.algos = ['SBO', 'BFGS', 'CG', 'Powell', 'Nelder-Mead']
+        self.algos = ['DGS', 'BFGS', 'CG', 'Powell', 'Nelder-Mead']
         self.sbo_params = {'sigma': .1, 'learning_rate': .01,
                            'quad_points': 7, 'num_iters': num_iters}
         self.scipy_params = {'maxiter': num_iters}
@@ -43,16 +43,17 @@ class BenchmarkAlgorithms:
 
     def run_minimization(self, alg):
         '''perform minimization with a given algorithm'''
-        if alg == 'SBO':
-            vals = self.sbo_minimize()
+        if alg in ['DGS']:
+            vals = self.sbo_minimize(alg)
         else:
             vals = self.scipy_minimize(alg)
         self.vals[alg].append(vals)
 
-    def sbo_minimize(self):
+    def sbo_minimize(self, method):
         '''minimize target function with smoothing-based optimization'''
-        sbo = SmoothingBasedOptimization(self.sbo_params)
-        sbo.minimize(self.fun, self.x0, plot=False, disable_pbar=True)
+        if method == 'DGS':
+            sbo = DirectionalGaussianSmoothing(self.sbo_params)
+            sbo.minimize(self.fun, self.x0, plot=False, disable_pbar=True)
         return sbo.vals
 
     def scipy_minimize(self, method):
