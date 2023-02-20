@@ -13,9 +13,9 @@ sns.set_theme(style='darkgrid', palette='muted', font='monospace')
 
 class BenchmarkAlgorithms:
 
-    def __init__(self, target, noise, dim):
+    def __init__(self, target, noise, domain):
         self.fun = lambda x: target(x) + noise(x)
-        self.dim = dim
+        self.domain = np.array(domain)
 
     def test(self, num_tests, random_seed):
         '''solve an optimization problem with various initial guesses'''
@@ -37,9 +37,10 @@ class BenchmarkAlgorithms:
         self.scipy_params = {'maxiter': num_iters}
 
     def sample_initial_guess(self, t):
-        '''randomly sample an initial guess'''
+        '''randomly sample an initial guess from the domain'''
         np.random.seed(self.random_seed_list[t])
-        self.x0 = np.random.randn(self.dim)
+        self.x0 = np.random.rand(len(self.domain))\
+            * (self.domain[:,1] - self.domain[:,0]) + self.domain[:,0]
 
     def run_minimization(self, alg):
         '''perform minimization with a given algorithm'''
@@ -84,12 +85,39 @@ if __name__ == '__main__':
     ##noise = lambda x: np.prod(1 + np.sin(x))
     noise = lambda x: np.sin(np.sum(10*np.abs(x)))
     ##noise = lambda x: np.random.randn()
-    dim = 100
+
+    domain = [[-1,1]] * 100
     num_tests = 10
     random_seed = 0
 
+
+
+
+    '''numerical examples from https://arxiv.org/abs/2302.06404'''
+    ### first test
+    ##a = 1
+    ##target = lambda x: np.sqrt(np.sum(np.abs(x[i])**(3+i) for i in range(5)))
+    ##noise = lambda x: np.sum(np.sin(2*np.pi*a*x[i]) for i in range(5))
+    ##domain = [[-20,20]] * 5
+
+    ### second test
+    ##a = 1
+    ##A = np.random.rand(5,20) / a
+    ##target = lambda x: np.sqrt(np.sum(np.abs(x[i])**(3+i) for i in range(5)))
+    ##noise = lambda x: 1/20 * np.sum(np.sum(np.sin(2*np.pi*A[i][j]*x[i])\
+                                           ##for i in range(5)) for j in range(20))
+    ##domain = [[-20,20]] * 5
+
+    ### third test
+    ##target = lambda x: np.sum(x**2)
+    ##noise = lambda x: np.sum(x**2 * np.sin(2*np.pi*x))
+    ##domain = [[-5,5]] * 5
+
+
+
+
     # run benchmarking
-    ba = BenchmarkAlgorithms(target, noise, dim)
+    ba = BenchmarkAlgorithms(target, noise, domain)
     ba.test(num_tests, random_seed)
     ba.visualize()
 
