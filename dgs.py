@@ -1,6 +1,6 @@
 """
-    implementation of the Directional Gaussian Smoothing algorithm
-    introduced in https://arxiv.org/pdf/2002.03001.pdf
+    Implementation of the Directional Gaussian Smoothing algorithm
+    introduced in https://arxiv.org/abs/2002.03001
 """
 
 import numpy as np
