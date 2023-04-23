@@ -9,8 +9,8 @@ from scipy.optimize import OptimizeResult
 from scipy.optimize._numdiff import approx_derivative
 
 
-def Adam(fun, x0, args=(), learning_rate=.01, beta1=.9, beta2=.999,
-         epsilon=1e-7, maxiter=1000, callback=None, **options):
+def Adam(fun, x0, args=(), learning_rate=.01, beta1=.9, beta2=.999, epsilon=1e-7,
+         maxiter=1000, xtol=1e-6, ftol=1e-4, gtol=1e-4, callback=None, **options):
     """
     Minimize a scalar function using the Adam optimizer.
 
@@ -32,6 +32,12 @@ def Adam(fun, x0, args=(), learning_rate=.01, beta1=.9, beta2=.999,
         The epsilon parameter for the Adam optimizer. Default is 1e-7.
     maxiter : int, optional
         The maximum number of iterations for the optimizer. Default is 1000.
+    xtol : float
+        Absolute error in solution xk acceptable for convergence.
+    ftol : float
+        Relative error in fun(xk) acceptable for convergence.
+    gtol : float, optional
+        Terminate successfully if gradient inf-norm is less than `gtol`.
     callback : callable, optional
         A function to be called after each iteration of the optimizer.
         The function is called as callback(xk), where xk is the current parameter vector.
@@ -45,6 +51,7 @@ def Adam(fun, x0, args=(), learning_rate=.01, beta1=.9, beta2=.999,
     """
     # initialize Adam variables
     xk = x0.copy()
+    fk = fun(xk)
     m = np.zeros_like(xk)
     v = np.zeros_like(xk)
     t = 0
@@ -64,28 +71,33 @@ def Adam(fun, x0, args=(), learning_rate=.01, beta1=.9, beta2=.999,
         x -= learning_rate * m_hat / (np.sqrt(v_hat) + epsilon)
         return x, grad
 
-    # initialize the optimization result to be returned
-    result = OptimizeResult()
-    result.nfev = 0
-    result.nit = 0
-    result.success = False
-
     # iteratively optimize target function
+    success = False
     for _ in range(maxiter):
-        xk, dfk = step(xk)
-        # update optimization result
-        result.x = xk
-        result.fun = fun(xk)
-        result.nit += 1
-        result.nfev += 1
+        x = xk.copy()
+        fval = fk
+        xk, gfk = step(x.copy())
+        fk = fun(xk)
         if callback is not None:
             callback(xk)
-        # terminate if optimization is successful
-        if np.linalg.norm(dfk) < np.sqrt(epsilon):
-            result.success = True
+
+        # check termination conditions
+        if np.linalg.norm(gfk, np.inf) < gtol:
+            msg = 'Optimization terminated succesfully.'
+            success = True
+            break
+        if np.linalg.norm(x - xk, np.inf) < xtol:
+            msg = 'Optimization terminated due to x-tolerance.'
+            break
+        if np.abs((fval - fk) / (fval + 1e-8)) < ftol:
+            msg = 'Optimization terminated due to f-tolerance.'
+            break
+        if t >= maxiter:
+            msg = 'The maximum number of iterations is reached.'
             break
 
-    return result
+    return OptimizeResult(x=xk, fun=fk, jac=gfk, nit=t, nfev=3*t,
+                          success=success, msg=msg)
 
 
 if __name__ == '__main__':

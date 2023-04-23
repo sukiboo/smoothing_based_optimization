@@ -28,7 +28,7 @@ class DirectionalGaussianSmoothing:
 
         # iteratively minimize the function
         self.vals = [self.fun(self.x)]
-        pbar = tqdm.trange(self.num_iters, ascii=True,
+        pbar = tqdm.trange(self.maxiter, ascii=True,
                            postfix=f'value={self.vals[-1]: .2e}', disable=disable_pbar)
         for _ in pbar:
 
