@@ -1,0 +1,78 @@
+# experiment parameters
+exp_params:
+    random_seed: 0
+    dim: 100
+    num_tests: 100
+
+
+# global parameters
+global_params:
+    maxiter: 100
+    xtol: 1.0e-6
+    ftol: 1.0e-4
+    gtol: 1.0e-4
+
+
+# target functions and corresponding parameters
+functions:
+
+    # ackley parameters
+    ackley:
+        Adam 0: {learning_rate: 1.0e-0, beta1: .9, beta2: .999}
+        Adam 1: {learning_rate: 1.0e-1, beta1: .9, beta2: .999}
+        Adam 2: {learning_rate: 1.0e-2, beta1: .9, beta2: .999}
+        Adam 3: {learning_rate: 1.0e-3, beta1: .9, beta2: .999}
+        Adam 4: {learning_rate: 1.0e-4, beta1: .9, beta2: .999}
+        Adam 5: {learning_rate: 1.0e-5, beta1: .9, beta2: .999}
+        Adam 6: {learning_rate: 1.0e-6, beta1: .9, beta2: .999}
+
+    # levy parameters
+    levy:
+        Adam 0: {learning_rate: 1.0e-0, beta1: .9, beta2: .999}
+        Adam 1: {learning_rate: 1.0e-1, beta1: .9, beta2: .999}
+        Adam 2: {learning_rate: 1.0e-2, beta1: .9, beta2: .999}
+        Adam 3: {learning_rate: 1.0e-3, beta1: .9, beta2: .999}
+        Adam 4: {learning_rate: 1.0e-4, beta1: .9, beta2: .999}
+        Adam 5: {learning_rate: 1.0e-5, beta1: .9, beta2: .999}
+        Adam 6: {learning_rate: 1.0e-6, beta1: .9, beta2: .999}
+
+    # michalewicz parameters
+    michalewicz:
+        Adam 0: {learning_rate: 1.0e-0, beta1: .9, beta2: .999}
+        Adam 1: {learning_rate: 1.0e-1, beta1: .9, beta2: .999}
+        Adam 2: {learning_rate: 1.0e-2, beta1: .9, beta2: .999}
+        Adam 3: {learning_rate: 1.0e-3, beta1: .9, beta2: .999}
+        Adam 4: {learning_rate: 1.0e-4, beta1: .9, beta2: .999}
+        Adam 5: {learning_rate: 1.0e-5, beta1: .9, beta2: .999}
+        Adam 6: {learning_rate: 1.0e-6, beta1: .9, beta2: .999}
+
+    # rastrigin parameters
+    rastrigin:
+        Adam 0: {learning_rate: 1.0e-0, beta1: .9, beta2: .999}
+        Adam 1: {learning_rate: 1.0e-1, beta1: .9, beta2: .999}
+        Adam 2: {learning_rate: 1.0e-2, beta1: .9, beta2: .999}
+        Adam 3: {learning_rate: 1.0e-3, beta1: .9, beta2: .999}
+        Adam 4: {learning_rate: 1.0e-4, beta1: .9, beta2: .999}
+        Adam 5: {learning_rate: 1.0e-5, beta1: .9, beta2: .999}
+        Adam 6: {learning_rate: 1.0e-6, beta1: .9, beta2: .999}
+
+    # rosenbrock parameters
+    rosenbrock:
+        Adam 0: {learning_rate: 1.0e-0, beta1: .9, beta2: .999}
+        Adam 1: {learning_rate: 1.0e-1, beta1: .9, beta2: .999}
+        Adam 2: {learning_rate: 1.0e-2, beta1: .9, beta2: .999}
+        Adam 3: {learning_rate: 1.0e-3, beta1: .9, beta2: .999}
+        Adam 4: {learning_rate: 1.0e-4, beta1: .9, beta2: .999}
+        Adam 5: {learning_rate: 1.0e-5, beta1: .9, beta2: .999}
+        Adam 6: {learning_rate: 1.0e-6, beta1: .9, beta2: .999}
+
+    # schwefel parameters
+    schwefel:
+        Adam 0: {learning_rate: 1.0e-0, beta1: .9, beta2: .999}
+        Adam 1: {learning_rate: 1.0e-1, beta1: .9, beta2: .999}
+        Adam 2: {learning_rate: 1.0e-2, beta1: .9, beta2: .999}
+        Adam 3: {learning_rate: 1.0e-3, beta1: .9, beta2: .999}
+        Adam 4: {learning_rate: 1.0e-4, beta1: .9, beta2: .999}
+        Adam 5: {learning_rate: 1.0e-5, beta1: .9, beta2: .999}
+        Adam 6: {learning_rate: 1.0e-6, beta1: .9, beta2: .999}
+

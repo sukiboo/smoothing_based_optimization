@@ -73,16 +73,10 @@ class BenchmarkAlgorithms:
         function_name = self.target_function['function_name']
         function_dim = self.target_function['dim']
         fig, ax = plt.subplots(figsize=(8,5))
-        ##fig, ax = plt.subplots(figsize=(10,6))
         for alg in self.algorithms:
             alg_vals = pd.DataFrame(self.vals[alg])
             alg_min, alg_avg, alg_max = alg_vals.quantile(percentile, axis=0).values
-
-            # this one for final plots
             plt.plot(alg_avg, linewidth=3, label=alg)
-            # this one for hyperparameter search
-            ##plt.plot(alg_avg, linewidth=3, label=f'{alg} ({alg_avg[-1]:.2e})')
-
             plt.fill_between(range(alg_min.size), alg_min, alg_max, alpha=.25)
         ax.set_title(f'{function_name} {function_dim}d')
 
@@ -93,23 +87,13 @@ class BenchmarkAlgorithms:
             alg_min, alg_max = alg_vals.quantile((.25, .75), axis=0).values
             m = min(m, alg_min[-1])
             M = max(M, alg_max[0])
-        ax.set_ylim(m, M)
-
-        # this one for final plots
+        ax.set_ylim(m-.05*(M-m), M+.05*(M-m))
         plt.legend()
-        ### this one for hyperparameter search
-        ##plt.legend(ncol=4, loc='upper center', bbox_to_anchor=(.5, 1.5))
-
         plt.tight_layout()
+
+        # save results
         os.makedirs('./images', exist_ok=True)
-        ##plt.savefig(f'./images/{function_name}_{function_dim}.png', dpi=300, format='png')
-        # very ugly workaround for the time being
-        save_name = f'{function_name}_{function_dim}'
-        if 'noise_magnitude' in self.target_function:
-            save_name += f'_{self.target_function["noise_magnitude"]}'
-        if 'noise_freq' in self.target_function:
-            save_name += f'_{self.target_function["noise_freq"]}'
-        plt.savefig(f'./images/{save_name}.png', dpi=300, format='png')
+        plt.savefig(f'./images/{function_name}_{function_dim}.png', dpi=300, format='png')
         if show:
             plt.show()
         else:
@@ -119,12 +103,13 @@ class BenchmarkAlgorithms:
 if __name__ == '__main__':
 
     config_file = '100d.yml'
+    num_tests = None
 
     # read configs
     configs = yaml.safe_load(open(f'./hyperparameters/{config_file}'))
     random_seed = configs['exp_params']['random_seed']
     dim = configs['exp_params']['dim']
-    num_tests = configs['exp_params']['num_tests']
+    num_tests = configs['exp_params']['num_tests'] if num_tests is None else num_tests
     global_params = configs['global_params']
 
     # benchmark algorithms
@@ -134,5 +119,5 @@ if __name__ == '__main__':
         for algortihm_params in algorithms.values():
             algortihm_params.update(global_params)
         ba = BenchmarkAlgorithms(algorithms, function_params, num_tests, random_seed)
-        ba.visualize(show=True)
+        ba.visualize(show=False)
 

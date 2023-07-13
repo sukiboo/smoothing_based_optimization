@@ -1,0 +1,84 @@
+# experiment parameters
+exp_params:
+    random_seed: 0
+    dim: 100
+    num_tests: 100
+
+
+# global parameters
+global_params:
+    maxiter: 100
+    xtol: 1.0e-6
+    ftol: 1.0e-4
+    gtol: 1.0e-4
+
+
+# target functions and corresponding parameters
+functions:
+
+    # ackley parameters
+    ackley:
+        DGS: {learning_rate: .1, sigma: .1, quad_points: 7}
+        MCGS: {learning_rate: .1, sigma: .1, num_points: 1000}
+        LSGD: {learning_rate: .1, sigma: .1}
+        NAG: {learning_rate: .01, beta: .5}
+        Adam: {learning_rate: .01, beta1: .9, beta2: .999}
+        RMSProp: {learning_rate: .01, beta: .9}
+        BFGS: {}
+        CG: {}
+
+    # levy parameters
+    levy:
+        DGS: {learning_rate: .1, sigma: .1, quad_points: 7}
+        MCGS: {learning_rate: .1, sigma: 1., num_points: 1000}
+        LSGD: {learning_rate: .1, sigma: .01}
+        NAG: {learning_rate: .001, beta: .5}
+        Adam: {learning_rate: .1, beta1: .9, beta2: .999}
+        RMSProp: {learning_rate: .1, beta: .9}
+        BFGS: {}
+        CG: {}
+
+    # michalewicz parameters
+    michalewicz:
+        DGS: {learning_rate: .0001, sigma: .01, quad_points: 7}
+        MCGS: {learning_rate: .0001, sigma: .01, num_points: 1000}
+        LSGD: {learning_rate: .00001, sigma: .01}
+        NAG: {learning_rate: .00001, beta: .5}
+        Adam: {learning_rate: .01, beta1: .9, beta2: .999}
+        RMSProp: {learning_rate: .001, beta: .9}
+        BFGS: {}
+        CG: {}
+
+    # rastrigin parameters
+    rastrigin:
+        DGS: {learning_rate: .001, sigma: .1, quad_points: 7}
+        MCGS: {learning_rate: .001, sigma: .1, num_points: 1000}
+        LSGD: {learning_rate: .001, sigma: .01}
+        NAG: {learning_rate: .001, beta: .5}
+        Adam: {learning_rate: .1, beta1: .9, beta2: .999}
+        RMSProp: {learning_rate: .1, beta: .9}
+        BFGS: {}
+        CG: {}
+
+    # rosenbrock parameters
+    rosenbrock:
+        DGS: {learning_rate: .00001, sigma: 1., quad_points: 7}
+        MCGS: {learning_rate: .00001, sigma: 1., num_points: 1000}
+        LSGD: {learning_rate: .00001, sigma: 1.}
+        NAG: {learning_rate: .000001, beta: .5}
+        Adam: {learning_rate: .1, beta1: .9, beta2: .999}
+        RMSProp: {learning_rate: .1, beta: .9}
+        BFGS: {}
+        CG: {}
+
+    # schwefel parameters
+    schwefel:
+        DGS: {learning_rate: 1., sigma: .1, quad_points: 7}
+        MCGS: {learning_rate: 1., sigma: .1, num_points: 1000}
+        LSGD: {learning_rate: 1., sigma: .01}
+        NAG: {learning_rate: .1, beta: .5}
+        Adam: {learning_rate: 1., beta1: .9, beta2: .999}
+        RMSProp: {learning_rate: 1., beta: .9}
+        BFGS: {}
+        CG: {}
+

@@ -1,0 +1,78 @@
+# experiment parameters
+exp_params:
+    random_seed: 0
+    dim: 100
+    num_tests: 100
+
+
+# global parameters
+global_params:
+    maxiter: 100
+    xtol: 1.0e-6
+    ftol: 1.0e-4
+    gtol: 1.0e-4
+
+
+# target functions and corresponding parameters
+functions:
+
+    # ackley parameters
+    ackley:
+        NAG 0: {learning_rate: 1.0e-0, beta: .5}
+        NAG 1: {learning_rate: 1.0e-1, beta: .5}
+        NAG 2: {learning_rate: 1.0e-2, beta: .5}
+        NAG 3: {learning_rate: 1.0e-3, beta: .5}
+        NAG 4: {learning_rate: 1.0e-4, beta: .5}
+        NAG 5: {learning_rate: 1.0e-5, beta: .5}
+        NAG 6: {learning_rate: 1.0e-6, beta: .5}
+
+    # levy parameters
+    levy:
+        NAG 0: {learning_rate: 1.0e-0, beta: .5}
+        NAG 1: {learning_rate: 1.0e-1, beta: .5}
+        NAG 2: {learning_rate: 1.0e-2, beta: .5}
+        NAG 3: {learning_rate: 1.0e-3, beta: .5}
+        NAG 4: {learning_rate: 1.0e-4, beta: .5}
+        NAG 5: {learning_rate: 1.0e-5, beta: .5}
+        NAG 6: {learning_rate: 1.0e-6, beta: .5}
+
+    # michalewicz parameters
+    michalewicz:
+        NAG 0: {learning_rate: 1.0e-0, beta: .5}
+        NAG 1: {learning_rate: 1.0e-1, beta: .5}
+        NAG 2: {learning_rate: 1.0e-2, beta: .5}
+        NAG 3: {learning_rate: 1.0e-3, beta: .5}
+        NAG 4: {learning_rate: 1.0e-4, beta: .5}
+        NAG 5: {learning_rate: 1.0e-5, beta: .5}
+        NAG 6: {learning_rate: 1.0e-6, beta: .5}
+
+    # rastrigin parameters
+    rastrigin:
+        NAG 0: {learning_rate: 1.0e-0, beta: .5}
+        NAG 1: {learning_rate: 1.0e-1, beta: .5}
+        NAG 2: {learning_rate: 1.0e-2, beta: .5}
+        NAG 3: {learning_rate: 1.0e-3, beta: .5}
+        NAG 4: {learning_rate: 1.0e-4, beta: .5}
+        NAG 5: {learning_rate: 1.0e-5, beta: .5}
+        NAG 6: {learning_rate: 1.0e-6, beta: .5}
+
+    # rosenbrock parameters
+    rosenbrock:
+        NAG 0: {learning_rate: 1.0e-0, beta: .5}
+        NAG 1: {learning_rate: 1.0e-1, beta: .5}
+        NAG 2: {learning_rate: 1.0e-2, beta: .5}
+        NAG 3: {learning_rate: 1.0e-3, beta: .5}
+        NAG 4: {learning_rate: 1.0e-4, beta: .5}
+        NAG 5: {learning_rate: 1.0e-5, beta: .5}
+        NAG 6: {learning_rate: 1.0e-6, beta: .5}
+
+    # schwefel parameters
+    schwefel:
+        NAG 0: {learning_rate: 1.0e-0, beta: .5}
+        NAG 1: {learning_rate: 1.0e-1, beta: .5}
+        NAG 2: {learning_rate: 1.0e-2, beta: .5}
+        NAG 3: {learning_rate: 1.0e-3, beta: .5}
+        NAG 4: {learning_rate: 1.0e-4, beta: .5}
+        NAG 5: {learning_rate: 1.0e-5, beta: .5}
+        NAG 6: {learning_rate: 1.0e-6, beta: .5}
+

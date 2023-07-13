@@ -1,0 +1,222 @@
+# experiment parameters
+exp_params:
+    random_seed: 0
+    dim: 100
+    num_tests: 100
+
+
+# global parameters
+global_params:
+    maxiter: 100
+    xtol: 1.0e-6
+    ftol: 1.0e-4
+    gtol: 1.0e-4
+
+
+# target functions and corresponding parameters
+functions:
+
+    # ackley parameters
+    ackley:
+        LSGD 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
+        LSGD 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
+        LSGD 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
+        LSGD 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
+        LSGD 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
+        LSGD 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
+        LSGD 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
+
+        LSGD 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
+        LSGD 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
+        LSGD 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
+        LSGD 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
+        LSGD 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
+        LSGD 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
+        LSGD 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
+
+        LSGD 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
+        LSGD 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
+        LSGD 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
+        LSGD 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
+        LSGD 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
+        LSGD 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
+        LSGD 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
+
+        LSGD 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
+        LSGD 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
+        LSGD 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
+        LSGD 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
+        LSGD 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
+        LSGD 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
+        LSGD 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
+
+    # levy parameters
+    levy:
+        LSGD 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
+        LSGD 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
+        LSGD 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
+        LSGD 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
+        LSGD 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
+        LSGD 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
+        LSGD 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
+
+        LSGD 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
+        LSGD 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
+        LSGD 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
+        LSGD 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
+        LSGD 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
+        LSGD 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
+        LSGD 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
+
+        LSGD 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
+        LSGD 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
+        LSGD 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
+        LSGD 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
+        LSGD 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
+        LSGD 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
+        LSGD 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
+
+        LSGD 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
+        LSGD 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
+        LSGD 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
+        LSGD 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
+        LSGD 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
+        LSGD 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
+        LSGD 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
+
+    # michalewicz parameters
+    michalewicz:
+        LSGD 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
+        LSGD 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
+        LSGD 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
+        LSGD 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
+        LSGD 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
+        LSGD 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
+        LSGD 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
+
+        LSGD 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
+        LSGD 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
+        LSGD 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
+        LSGD 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
+        LSGD 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
+        LSGD 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
+        LSGD 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
+
+        LSGD 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
+        LSGD 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
+        LSGD 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
+        LSGD 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
+        LSGD 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
+        LSGD 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
+        LSGD 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
+
+        LSGD 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
+        LSGD 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
+        LSGD 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
+        LSGD 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
+        LSGD 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
+        LSGD 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
+        LSGD 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
+
+    # rastrigin parameters
+    rastrigin:
+        LSGD 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
+        LSGD 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
+        LSGD 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
+        LSGD 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
+        LSGD 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
+        LSGD 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
+        LSGD 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
+
+        LSGD 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
+        LSGD 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
+        LSGD 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
+        LSGD 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
+        LSGD 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
+        LSGD 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
+        LSGD 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
+
+        LSGD 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
+        LSGD 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
+        LSGD 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
+        LSGD 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
+        LSGD 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
+        LSGD 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
+        LSGD 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
+
+        LSGD 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
+        LSGD 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
+        LSGD 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
+        LSGD 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
+        LSGD 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
+        LSGD 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
+        LSGD 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
+
+    # rosenbrock parameters
+    rosenbrock:
+        LSGD 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
+        LSGD 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
+        LSGD 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
+        LSGD 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
+        LSGD 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
+        LSGD 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
+        LSGD 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
+
+        LSGD 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
+        LSGD 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
+        LSGD 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
+        LSGD 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
+        LSGD 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
+        LSGD 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
+        LSGD 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
+
+        LSGD 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
+        LSGD 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
+        LSGD 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
+        LSGD 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
+        LSGD 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
+        LSGD 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
+        LSGD 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
+
+        LSGD 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
+        LSGD 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
+        LSGD 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
+        LSGD 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
+        LSGD 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
+        LSGD 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
+        LSGD 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
+
+    # schwefel parameters
+    schwefel:
+        LSGD 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
+        LSGD 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
+        LSGD 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
+        LSGD 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
+        LSGD 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
+        LSGD 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
+        LSGD 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
+
+        LSGD 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
+        LSGD 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
+        LSGD 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
+        LSGD 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
+        LSGD 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
+        LSGD 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
+        LSGD 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
+
+        LSGD 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
+        LSGD 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
+        LSGD 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
+        LSGD 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
+        LSGD 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
+        LSGD 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
+        LSGD 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
+
+        LSGD 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
+        LSGD 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
+        LSGD 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
+        LSGD 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
+        LSGD 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
+        LSGD 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
+        LSGD 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
+

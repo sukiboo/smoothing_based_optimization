@@ -1,0 +1,222 @@
+# experiment parameters
+exp_params:
+    random_seed: 0
+    dim: 100
+    num_tests: 100
+
+
+# global parameters
+global_params:
+    maxiter: 100
+    xtol: 1.0e-6
+    ftol: 1.0e-4
+    gtol: 1.0e-4
+
+
+# target functions and corresponding parameters
+functions:
+
+    # ackley parameters
+    ackley:
+        MCGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, num_points: 1000}
+        MCGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, num_points: 1000}
+        MCGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, num_points: 1000}
+        MCGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, num_points: 1000}
+        MCGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, num_points: 1000}
+        MCGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, num_points: 1000}
+        MCGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, num_points: 1000}
+
+        MCGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, num_points: 1000}
+        MCGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, num_points: 1000}
+        MCGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, num_points: 1000}
+        MCGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, num_points: 1000}
+        MCGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, num_points: 1000}
+        MCGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, num_points: 1000}
+        MCGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, num_points: 1000}
+
+        MCGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, num_points: 1000}
+        MCGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, num_points: 1000}
+        MCGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, num_points: 1000}
+        MCGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, num_points: 1000}
+        MCGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, num_points: 1000}
+        MCGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, num_points: 1000}
+        MCGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, num_points: 1000}
+
+        MCGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, num_points: 1000}
+        MCGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, num_points: 1000}
+        MCGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, num_points: 1000}
+        MCGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, num_points: 1000}
+        MCGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, num_points: 1000}
+        MCGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, num_points: 1000}
+        MCGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, num_points: 1000}
+
+    # levy parameters
+    levy:
+        MCGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, num_points: 1000}
+        MCGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, num_points: 1000}
+        MCGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, num_points: 1000}
+        MCGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, num_points: 1000}
+        MCGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, num_points: 1000}
+        MCGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, num_points: 1000}
+        MCGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, num_points: 1000}
+
+        MCGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, num_points: 1000}
+        MCGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, num_points: 1000}
+        MCGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, num_points: 1000}
+        MCGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, num_points: 1000}
+        MCGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, num_points: 1000}
+        MCGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, num_points: 1000}
+        MCGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, num_points: 1000}
+
+        MCGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, num_points: 1000}
+        MCGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, num_points: 1000}
+        MCGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, num_points: 1000}
+        MCGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, num_points: 1000}
+        MCGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, num_points: 1000}
+        MCGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, num_points: 1000}
+        MCGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, num_points: 1000}
+
+        MCGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, num_points: 1000}
+        MCGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, num_points: 1000}
+        MCGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, num_points: 1000}
+        MCGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, num_points: 1000}
+        MCGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, num_points: 1000}
+        MCGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, num_points: 1000}
+        MCGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, num_points: 1000}
+
+    # michalewicz parameters
+    michalewicz:
+        MCGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, num_points: 1000}
+        MCGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, num_points: 1000}
+        MCGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, num_points: 1000}
+        MCGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, num_points: 1000}
+        MCGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, num_points: 1000}
+        MCGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, num_points: 1000}
+        MCGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, num_points: 1000}
+
+        MCGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, num_points: 1000}
+        MCGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, num_points: 1000}
+        MCGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, num_points: 1000}
+        MCGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, num_points: 1000}
+        MCGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, num_points: 1000}
+        MCGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, num_points: 1000}
+        MCGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, num_points: 1000}
+
+        MCGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, num_points: 1000}
+        MCGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, num_points: 1000}
+        MCGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, num_points: 1000}
+        MCGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, num_points: 1000}
+        MCGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, num_points: 1000}
+        MCGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, num_points: 1000}
+        MCGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, num_points: 1000}
+
+        MCGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, num_points: 1000}
+        MCGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, num_points: 1000}
+        MCGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, num_points: 1000}
+        MCGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, num_points: 1000}
+        MCGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, num_points: 1000}
+        MCGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, num_points: 1000}
+        MCGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, num_points: 1000}
+
+    # rastrigin parameters
+    rastrigin:
+        MCGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, num_points: 1000}
+        MCGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, num_points: 1000}
+        MCGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, num_points: 1000}
+        MCGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, num_points: 1000}
+        MCGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, num_points: 1000}
+        MCGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, num_points: 1000}
+        MCGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, num_points: 1000}
+
+        MCGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, num_points: 1000}
+        MCGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, num_points: 1000}
+        MCGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, num_points: 1000}
+        MCGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, num_points: 1000}
+        MCGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, num_points: 1000}
+        MCGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, num_points: 1000}
+        MCGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, num_points: 1000}
+
+        MCGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, num_points: 1000}
+        MCGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, num_points: 1000}
+        MCGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, num_points: 1000}
+        MCGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, num_points: 1000}
+        MCGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, num_points: 1000}
+        MCGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, num_points: 1000}
+        MCGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, num_points: 1000}
+
+        MCGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, num_points: 1000}
+        MCGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, num_points: 1000}
+        MCGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, num_points: 1000}
+        MCGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, num_points: 1000}
+        MCGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, num_points: 1000}
+        MCGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, num_points: 1000}
+        MCGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, num_points: 1000}
+
+    # rosenbrock parameters
+    rosenbrock:
+        MCGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, num_points: 1000}
+        MCGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, num_points: 1000}
+        MCGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, num_points: 1000}
+        MCGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, num_points: 1000}
+        MCGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, num_points: 1000}
+        MCGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, num_points: 1000}
+        MCGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, num_points: 1000}
+
+        MCGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, num_points: 1000}
+        MCGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, num_points: 1000}
+        MCGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, num_points: 1000}
+        MCGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, num_points: 1000}
+        MCGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, num_points: 1000}
+        MCGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, num_points: 1000}
+        MCGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, num_points: 1000}
+
+        MCGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, num_points: 1000}
+        MCGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, num_points: 1000}
+        MCGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, num_points: 1000}
+        MCGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, num_points: 1000}
+        MCGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, num_points: 1000}
+        MCGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, num_points: 1000}
+        MCGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, num_points: 1000}
+
+        MCGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, num_points: 1000}
+        MCGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, num_points: 1000}
+        MCGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, num_points: 1000}
+        MCGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, num_points: 1000}
+        MCGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, num_points: 1000}
+        MCGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, num_points: 1000}
+        MCGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, num_points: 1000}
+
+    # schwefel parameters
+    schwefel:
+        MCGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, num_points: 1000}
+        MCGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, num_points: 1000}
+        MCGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, num_points: 1000}
+        MCGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, num_points: 1000}
+        MCGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, num_points: 1000}
+        MCGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, num_points: 1000}
+        MCGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, num_points: 1000}
+
+        MCGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, num_points: 1000}
+        MCGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, num_points: 1000}
+        MCGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, num_points: 1000}
+        MCGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, num_points: 1000}
+        MCGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, num_points: 1000}
+        MCGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, num_points: 1000}
+        MCGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, num_points: 1000}
+
+        MCGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, num_points: 1000}
+        MCGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, num_points: 1000}
+        MCGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, num_points: 1000}
+        MCGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, num_points: 1000}
+        MCGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, num_points: 1000}
+        MCGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, num_points: 1000}
+        MCGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, num_points: 1000}
+
+        MCGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, num_points: 1000}
+        MCGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, num_points: 1000}
+        MCGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, num_points: 1000}
+        MCGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, num_points: 1000}
+        MCGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, num_points: 1000}
+        MCGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, num_points: 1000}
+        MCGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, num_points: 1000}
+
