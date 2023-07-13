@@ -1,6 +1,6 @@
 """
-    Implementation of the Directional Gaussian Smoothing algorithm
-    introduced in https://arxiv.org/abs/2002.03001
+    Implementation of the Monte Carlo Gaussian Smoothing algorithm
+    introduced in ??
     The algorithm is implemented as a scipy.optimize method
 """
 
@@ -9,10 +9,10 @@ from scipy.optimize import OptimizeResult
 from scipy.optimize._numdiff import approx_derivative
 
 
-def DGS(fun, x0, args=(), learning_rate=.01, sigma=.1, quad_points=7,
-        maxiter=1000, xtol=1e-6, ftol=1e-4, gtol=1e-4, callback=None, **options):
+def MCGS(fun, x0, args=(), learning_rate=.1, sigma=.1, num_points=1000,
+         maxiter=1000, xtol=1e-6, ftol=1e-4, gtol=1e-4, callback=None, **options):
     """
-    Minimize a scalar function using the DGS optimizer.
+    Minimize a scalar function using the MCGS optimizer.
 
     Parameters
     ----------
@@ -23,11 +23,11 @@ def DGS(fun, x0, args=(), learning_rate=.01, sigma=.1, quad_points=7,
     args : tuple, optional
         Extra arguments passed to the objective function. (Ignored in this code)
     learning_rate : float, optional
-        The learning rate for the DGS optimizer. Default is 0.01.
+        The learning rate for the MCGS optimizer. Default is 0.01.
     sigma : float, optional
-        The smoothing parameter for the DGS optimizer. Default is 0.1.
-    quad_points : int, optional
-        The number of Gauss-Hermite quadrature points to use. Default is 7.
+        The smoothing parameter for the MCGS optimizer. Default is 0.1.
+    num_points : int, optional
+        The number of Monte Carlo sample points to use. Default is 1000.
     maxiter : int, optional
         The maximum number of iterations for the optimizer. Default is 1000.
     xtol : float
@@ -47,30 +47,24 @@ def DGS(fun, x0, args=(), learning_rate=.01, sigma=.1, quad_points=7,
     OptimizeResult
         The optimization result represented as a dictionary.
     """
-    # initialize DGS variables
+    # initialize MCGS variables
     dim = len(x0)
     xk = x0.copy()
     fk = fun(xk)
     t = 0
 
-    # establish search directions and quadrature points
-    basis = np.eye(dim)
-    gh_roots, gh_weights = np.polynomial.hermite.hermgauss(quad_points)
-
     def step(x):
-        '''Perform a step of DGS optimizer'''
+        '''Perform a step of MCGS optimizer'''
         nonlocal t
         t += 1
-        # estimate smoothed directional derivative along each basis direction
-        df_sigma_basis = np.zeros(dim)
-        for d in range(dim):
-            # estimate directional derivative via Gauss--Hermite quadrature
-            f_d = lambda t: fun(x + t*basis[d])
-            f_d_vals = np.array([f_d(sigma * p) for p in gh_roots])
-            df_sigma_basis[d] = np.sum(gh_weights * gh_roots * f_d_vals)\
-                                / (sigma * np.sqrt(np.pi)/2)
-        # assemble smoothed gradient and update minimizer
-        grad_sigma = np.matmul(basis, df_sigma_basis)
+
+        # estimate smoothed gradient via Monte Carlo
+        grad_sigma = np.zeros(dim)
+        for i in range(num_points):
+            eps = np.random.randn(dim)
+            grad_sigma += (fun(x + sigma*eps) - fun(x - sigma*eps)) * eps / (2*sigma*num_points)
+
+        # update minimizer
         x -= learning_rate * grad_sigma
         return x, grad_sigma
 
@@ -99,7 +93,7 @@ def DGS(fun, x0, args=(), learning_rate=.01, sigma=.1, quad_points=7,
             msg = 'The maximum number of iterations is reached.'
             break
 
-    return OptimizeResult(x=xk, fun=fk, jac=gfk, nit=t, nfev=quad_points*xk.size*t,
+    return OptimizeResult(x=xk, fun=fk, jac=gfk, nit=t, nfev=(num_points+1)*t,
                           success=success, msg=msg)
 
 
@@ -108,5 +102,5 @@ if __name__ == '__main__':
     fun = lambda x: np.sum(x**2)
     x0 = np.random.randn(100)
     vals = [fun(x0)]
-    res = DGS(fun, x0, callback=lambda x: vals.append(fun(x)))
+    res = MCGS(fun, x0, callback=lambda x: vals.append(fun(x)))
     print(res)

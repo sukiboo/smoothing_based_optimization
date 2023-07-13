@@ -2,56 +2,28 @@
     Implementation of the Directional Gaussian Smoothing algorithm
     introduced in https://arxiv.org/abs/2002.03001
     The algorithm is implemented as a scipy.optimize method
+
+    This particular algorithm will be modified to change sigma
 """
 
 import numpy as np
 from scipy.optimize import OptimizeResult
 from scipy.optimize._numdiff import approx_derivative
+from collections import deque
 
 
-def DGS(fun, x0, args=(), learning_rate=.01, sigma=.1, quad_points=7,
+def ADGS(fun, x0, args=(), learning_rate=.01, sigma=10., gamma=.995, quad_points=7,
         maxiter=1000, xtol=1e-6, ftol=1e-4, gtol=1e-4, callback=None, **options):
     """
-    Minimize a scalar function using the DGS optimizer.
-
-    Parameters
-    ----------
-    fun : callable
-        The objective function to be minimized.
-    x0 : ndarray
-        The initial guess.
-    args : tuple, optional
-        Extra arguments passed to the objective function. (Ignored in this code)
-    learning_rate : float, optional
-        The learning rate for the DGS optimizer. Default is 0.01.
-    sigma : float, optional
-        The smoothing parameter for the DGS optimizer. Default is 0.1.
-    quad_points : int, optional
-        The number of Gauss-Hermite quadrature points to use. Default is 7.
-    maxiter : int, optional
-        The maximum number of iterations for the optimizer. Default is 1000.
-    xtol : float
-        Absolute error in solution xk acceptable for convergence.
-    ftol : float
-        Relative error in fun(xk) acceptable for convergence.
-    gtol : float, optional
-        Terminate successfully if gradient inf-norm is less than `gtol`.
-    callback : callable, optional
-        A function to be called after each iteration of the optimizer.
-        The function is called as callback(xk), where xk is the current parameter vector.
-    options : dict, optional
-        Additional options to pass to the optimizer.
-
-    Returns
-    -------
-    OptimizeResult
-        The optimization result represented as a dictionary.
+    Minimize a scalar function using the ADGS optimizer.
+    It is DGS but with exponential decay on sigma
     """
     # initialize DGS variables
     dim = len(x0)
     xk = x0.copy()
     fk = fun(xk)
     t = 0
+    ##fun_vals = deque([0]*10, maxlen=10)
 
     # establish search directions and quadrature points
     basis = np.eye(dim)
@@ -84,6 +56,15 @@ def DGS(fun, x0, args=(), learning_rate=.01, sigma=.1, quad_points=7,
         if callback is not None:
             callback(xk)
 
+        # check if sigma should be reduced
+        sigma *= gamma
+        ##fun_vals.append(fk)
+        ##if all(abs(fk - fun_val) < 1e-3 for fun_val in fun_vals):
+            ##print(f'iteration {t}, sigma is reduced: {sigma:.4f} --> {sigma/2:.4f}')
+            ##print(fk, fun_vals, '\n')
+            ##sigma = max(sigma/2, 1e-6)
+            ##fun_vals = deque([0]*10, maxlen=10)
+
         # check termination conditions
         if np.linalg.norm(gfk, np.inf) < gtol:
             msg = 'Optimization terminated succesfully.'
@@ -108,5 +89,5 @@ if __name__ == '__main__':
     fun = lambda x: np.sum(x**2)
     x0 = np.random.randn(100)
     vals = [fun(x0)]
-    res = DGS(fun, x0, callback=lambda x: vals.append(fun(x)))
+    res = ADGS(fun, x0, callback=lambda x: vals.append(fun(x)))
     print(res)
