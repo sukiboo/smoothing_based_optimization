@@ -21,7 +21,7 @@ def target_function(function_params, random_seed=None):
         noise = lambda x: function_params['noise_magnitude']\
             * (1 + np.sin(np.sum(np.abs(dilation_noise * x))))
         fun = lambda x: target(x) + noise(x)
-        x_dom = [[-10, 10]] * dim
+        x_dom = [[-1, 1]] * dim
         x_min = [0] * dim
 
     # random sphere -- see above regarding the name
@@ -30,7 +30,7 @@ def target_function(function_params, random_seed=None):
         target = lambda x: np.sum(dilation_sphere * x**2)
         noise = lambda x: function_params['noise_magnitude'] * np.random.rand()
         fun = lambda x: target(x) + noise(x)
-        x_dom = [[-10, 10]] * dim
+        x_dom = [[-1, 1]] * dim
         x_min = [0] * dim
 
 
@@ -59,9 +59,10 @@ def target_function(function_params, random_seed=None):
     # Michalewicz function
     elif function_name == 'michalewicz':
         m = 10 # default parameter
-        fun = lambda x: np.sum(-np.sin(x[d]) * np.sin(d * x[d]**2 / np.pi)**m\
-                               for d in range(dim))
-        x_dom = [0, np.pi] * dim
+        ##fun = lambda x: np.sum(-np.sin(x[d]) * np.sin(d * x[d]**2 / np.pi)**m\
+                               ##for d in range(dim))
+        fun = lambda x: -np.sum(np.sin(x) * np.sin(np.arange(1,dim+1) * x**2 / np.pi)**(2*m))
+        x_dom = [[0, np.pi]] * dim
         x_min = [None] * dim
 
     # Rastrigin function
@@ -72,16 +73,17 @@ def target_function(function_params, random_seed=None):
 
     # Rosenbrock function
     elif function_name == 'rosenbrock':
-        fun = lambda x: np.sum(100 * (x[d+1] - x[d]**2)**2 + (x[d] - 1)**2\
-                               for d in range(dim-1))
+        ##fun = lambda x: np.sum(100 * (x[d+1] - x[d]**2)**2 + (x[d] - 1)**2 for d in range(dim-1))
+        fun = lambda x: np.sum(100 * (x[1:] - x[:-1]**2)**2 + (x[:-1] - 1)**2)
         x_dom = [[-5, 10]] * dim
         x_min = [1] * dim
 
     # Schwefel function
     elif function_name == 'schwefel':
-        fun = lambda x: 418.9829*dim\
-            - np.sum(x[d] * np.sin(np.sqrt(np.abs(x[d]))) for d in range(dim))
-        x_dom = [-500, 500] * dim
+        ##fun = lambda x: 418.9829*dim\
+            ##- np.sum(x[d] * np.sin(np.sqrt(np.abs(x[d]))) for d in range(dim))
+        fun = lambda x: 418.9829*dim - np.sum(x * np.sin(np.sqrt(np.abs(x))))
+        x_dom = [[-500, 500]] * dim
         x_min = [420.9687] * dim
 
     # sphere function
@@ -115,7 +117,7 @@ def target_function(function_params, random_seed=None):
     elif function_name == 'eggholder':
         fun = lambda x: -(x[1] + 47) * np.sin(np.sqrt(np.abs(x[1] + x[0]/2 + 47)))\
             - x[0] * np.sin(np.sqrt(np.abs(x[0] - x[1] - 47)))
-        x_dom = [-512, 512]
+        x_dom = [[-512, 512], [-512, 512]]
         x_min = [512, 404.2319]
 
     # Holder table function
@@ -135,13 +137,17 @@ def initial_guess(x_dom, random_seed):
     """Randomly sample initial guess"""
     np.random.seed(random_seed)
     dim = x_dom.shape[-1]
-    x0 = (x_dom[1] - x_dom[0]) * np.random.random(dim) + x_dom[0]
+    x0 = (x_dom[1] - x_dom[0]) * np.random.rand(dim) + x_dom[0]
     return x0
 
 
-def setup_optimization(function_params, random_seed):
+def setup_optimization(function_params, random_seed, noise=False):
     """Return a target function and an initial guess"""
     fun, x_min, x_dom = target_function(function_params, random_seed)
     x0 = initial_guess(x_dom, random_seed)
-    return fun, x0
-
+    if not noise:
+        return fun, x0
+    else:
+        # add random noise
+        fun2 = lambda x: fun(x) * (.9999 + .0002*np.random.rand())
+        return fun2, x0
