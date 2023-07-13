@@ -1,20 +1,25 @@
-
 import numpy as np
 import scipy
 import tqdm
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import yaml
 import os
 
 from algorithms.dgs import DGS
+from algorithms.mcgs import MCGS
+from algorithms.lsgd import LSGD
+from algorithms.slgh import SLGH
+from algorithms.adgs import ADGS
 from algorithms.adam import Adam
 from algorithms.rmsprop import RMSProp
 from algorithms.nag import NAG
-from algorithms.lsgd import LSGD
 from target_functions import setup_optimization
 
-sns.set_theme(style='darkgrid', palette='muted', font='monospace')
+import warnings
+warnings.filterwarnings('ignore')
+sns.set_theme(style='darkgrid', palette='muted', font='monospace', font_scale=.8)
 
 
 class BenchmarkAlgorithms:
@@ -37,43 +42,64 @@ class BenchmarkAlgorithms:
                                                        self.random_seed_list[t])
                 self.run_minimization(alg, params)
 
-    # TODO: combine this function with the next
     def run_minimization(self, alg, params):
         '''perform minimization with a given algorithm'''
-        vals = self.scipy_minimize(alg, params)
-        self.vals[alg].append(vals)
-
-    def scipy_minimize(self, method, params):
-        '''minimize target function with a given scipy method'''
-        vals = [self.fun(self.x0)]
         # TODO: fix this
-        if method == 'DGS':
+        if alg.startswith('DGS'):
             method = DGS
-        if method == 'Adam':
+        elif alg.startswith('ADGS'):
+            method = ADGS
+        elif alg.startswith('MCGS'):
+            method = MCGS
+        elif alg.startswith('Adam'):
             method = Adam
-        elif method == 'RMSProp':
+        elif alg.startswith('RMSProp'):
             method = RMSProp
-        elif method == 'NAG':
+        elif alg.startswith('NAG'):
             method = NAG
-        elif method == 'LSGD':
+        elif alg.startswith('LSGD'):
             method = LSGD
+        elif alg.startswith('SLGH'):
+            method = SLGH
+        else:
+            method = alg
+        vals = [self.fun(self.x0)]
         scipy.optimize.minimize(self.fun, self.x0, method=method, options=params,
                                 callback=lambda x: vals.append(self.fun(x)))
-        return vals
+        self.vals[alg].append(vals)
 
     def visualize(self, percentile=(.25,.5,.75), show=True):
         '''visualize optimization results'''
         function_name = self.target_function['function_name']
         function_dim = self.target_function['dim']
         fig, ax = plt.subplots(figsize=(8,5))
+        ##fig, ax = plt.subplots(figsize=(10,6))
         for alg in self.algorithms:
             alg_vals = pd.DataFrame(self.vals[alg])
             alg_min, alg_avg, alg_max = alg_vals.quantile(percentile, axis=0).values
+
+            # this one for final plots
             plt.plot(alg_avg, linewidth=3, label=alg)
+            # this one for hyperparameter search
+            ##plt.plot(alg_avg, linewidth=3, label=f'{alg} ({alg_avg[-1]:.2e})')
+
             plt.fill_between(range(alg_min.size), alg_min, alg_max, alpha=.25)
         ax.set_title(f'{function_name} {function_dim}d')
-        plt.yscale('log')
+
+        # make sensible plots by adjusting y-scale
+        m, M = float('inf'), float('-inf')
+        for alg in self.algorithms:
+            alg_vals = pd.DataFrame(self.vals[alg])
+            alg_min, alg_max = alg_vals.quantile((.25, .75), axis=0).values
+            m = min(m, alg_min[-1])
+            M = max(M, alg_max[0])
+        ax.set_ylim(m, M)
+
+        # this one for final plots
         plt.legend()
+        ### this one for hyperparameter search
+        ##plt.legend(ncol=4, loc='upper center', bbox_to_anchor=(.5, 1.5))
+
         plt.tight_layout()
         os.makedirs('./images', exist_ok=True)
         ##plt.savefig(f'./images/{function_name}_{function_dim}.png', dpi=300, format='png')
@@ -92,72 +118,21 @@ class BenchmarkAlgorithms:
 
 if __name__ == '__main__':
 
-    num_tests = 10
-    random_seed = 0
-    maxiter = 100
+    config_file = '100d.yml'
 
-    algorithms = {
-        'DGS': {'learning_rate': .001, 'sigma': .1, 'quad_points': 7, 'maxiter': maxiter},
-       'LSGD': {'learning_rate': .001, 'sigma': .1, 'maxiter': maxiter},
-        'NAG': {'learning_rate': .001, 'beta': .5, 'maxiter': maxiter},
-       'Adam': {'learning_rate': .1, 'beta1': .9, 'beta2': .999, 'maxiter': maxiter},
-    'RMSProp': {'learning_rate': .1, 'beta': .9, 'maxiter': maxiter},
-       'BFGS': {'maxiter': maxiter},
-         'CG': {'maxiter': maxiter},
-     ##'Powell': {'maxiter': maxiter},
-            }
+    # read configs
+    configs = yaml.safe_load(open(f'./hyperparameters/{config_file}'))
+    random_seed = configs['exp_params']['random_seed']
+    dim = configs['exp_params']['dim']
+    num_tests = configs['exp_params']['num_tests']
+    global_params = configs['global_params']
 
-    '''dilated sphere with noise'''
-    dim = 100
-    target_functions = [
-        {'function_name': 'sphere_noisy', 'dim': dim,
-            'noise_freq': 1., 'noise_magnitude': 1.},
-        {'function_name': 'sphere_noisy', 'dim': dim,
-            'noise_freq': 10., 'noise_magnitude': 1.},
-        {'function_name': 'sphere_noisy', 'dim': dim,
-            'noise_freq': 100., 'noise_magnitude': 1.},
-        {'function_name': 'sphere_noisy', 'dim': dim,
-            'noise_freq': 1., 'noise_magnitude': 10.},
-        {'function_name': 'sphere_noisy', 'dim': dim,
-            'noise_freq': 10., 'noise_magnitude': 10.},
-        {'function_name': 'sphere_noisy', 'dim': dim,
-            'noise_freq': 100., 'noise_magnitude': 10.},
-        {'function_name': 'sphere_noisy', 'dim': dim,
-            'noise_freq': 1., 'noise_magnitude': 100.},
-        {'function_name': 'sphere_noisy', 'dim': dim,
-            'noise_freq': 10., 'noise_magnitude': 100.},
-        {'function_name': 'sphere_noisy', 'dim': dim,
-            'noise_freq': 100., 'noise_magnitude': 100.},
-        {'function_name': 'sphere_random', 'dim': dim, 'noise_magnitude': 1e-6},
-        {'function_name': 'sphere_random', 'dim': dim, 'noise_magnitude': 1e-5},
-        {'function_name': 'sphere_random', 'dim': dim, 'noise_magnitude': 1e-4},
-        ]
+    # benchmark algorithms
+    for function, algorithms in configs['functions'].items():
+        function_params = {'function_name': function, 'dim': dim}
+        # update each algorithm with global parameters
+        for algortihm_params in algorithms.values():
+            algortihm_params.update(global_params)
+        ba = BenchmarkAlgorithms(algorithms, function_params, num_tests, random_seed)
+        ba.visualize(show=True)
 
-    '''any dimensionality functions from https://www.sfu.ca/~ssurjano/optimization.html'''
-    dim = 100
-    target_functions_ssa = [
-        {'function_name': 'ackley', 'dim': dim},
-        {'function_name': 'griewank', 'dim': dim},
-        {'function_name': 'levy', 'dim': dim},
-        {'function_name': 'michalewicz', 'dim': dim},
-        {'function_name': 'rastrigin', 'dim': dim},
-        {'function_name': 'rosenbrock', 'dim': dim},
-        {'function_name': 'schwefel', 'dim': dim},
-        {'function_name': 'sphere', 'dim': dim},
-        ]
-
-    '''some 2-dimensional functions from https://www.sfu.ca/~ssurjano/optimization.html'''
-    target_functions_ssa_2 = [
-        {'function_name': 'branin', 'dim': 2},
-        {'function_name': 'cross-in-tray', 'dim': 2},
-        {'function_name': 'dropwave', 'dim': 2},
-        {'function_name': 'eggholder', 'dim': 2},
-        {'function_name': 'holder', 'dim': 2},
-        {'function_name': 'sphere', 'dim': 2},
-        ]
-
-
-    # run benchmarking
-    for target_function in target_functions:
-        ba = BenchmarkAlgorithms(algorithms, target_function, num_tests, random_seed)
-        ba.visualize(show=False)
