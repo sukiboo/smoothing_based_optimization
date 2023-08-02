@@ -78,8 +78,8 @@ def SLGH(fun, x0, args=(), learning_rate=.1, sigma=.1, num_points=100,
             g_t = (np.dot(v,v) - dim) * (fun(x + sigma*v) - fun(x)) / sigma
             g_sigma.append(g_t)
 
-        sigma -= learning_rate_sigma * np.mean(g_sigma)
-        ##sigma = min(sigma - learning_rate_sigma * np.mean(g_sigma), sigma_decay * sigma)
+        ##sigma -= learning_rate_sigma * np.mean(g_sigma)
+        sigma = min(sigma - learning_rate_sigma * np.mean(g_sigma), sigma_decay * sigma)
         sigma = max(sigma, 1e-4)
 
         # update minimizer
@@ -93,9 +93,10 @@ def SLGH(fun, x0, args=(), learning_rate=.1, sigma=.1, num_points=100,
         fval = fk
         xk, gfk = step(x.copy())
         fk = fun(xk)
-        print(f'{t:2d}: fun(xk) = {fk:.4f},  sigma = {sigma:.2e}')
         if callback is not None:
             callback(xk)
+        ##if t % 1000 == 0:
+            ##print(f'{t:2d}: fun(xk) = {fk:.4f},  sigma = {sigma:.2e}')
 
         # check termination conditions
         if np.linalg.norm(gfk, np.inf) < gtol:
