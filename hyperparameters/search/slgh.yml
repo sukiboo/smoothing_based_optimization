@@ -88,139 +88,139 @@ functions:
         SLGH 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
         SLGH 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
 
-    ### michalewicz parameters
-    ##michalewicz:
-        ##SLGH 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
-        ##SLGH 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
-        ##SLGH 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
-        ##SLGH 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
-        ##SLGH 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
-        ##SLGH 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
-        ##SLGH 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
+    # michalewicz parameters
+    michalewicz:
+        SLGH 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
+        SLGH 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
+        SLGH 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
+        SLGH 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
+        SLGH 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
+        SLGH 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
+        SLGH 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
 
-        ##SLGH 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
-        ##SLGH 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
-        ##SLGH 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
-        ##SLGH 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
-        ##SLGH 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
-        ##SLGH 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
-        ##SLGH 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
+        SLGH 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
+        SLGH 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
+        SLGH 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
+        SLGH 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
+        SLGH 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
+        SLGH 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
+        SLGH 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
 
-        ##SLGH 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
-        ##SLGH 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
-        ##SLGH 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
-        ##SLGH 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
-        ##SLGH 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
-        ##SLGH 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
-        ##SLGH 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
+        SLGH 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
+        SLGH 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
+        SLGH 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
+        SLGH 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
+        SLGH 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
+        SLGH 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
+        SLGH 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
 
-        ##SLGH 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
-        ##SLGH 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
-        ##SLGH 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
-        ##SLGH 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
-        ##SLGH 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
-        ##SLGH 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
-        ##SLGH 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
+        SLGH 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
+        SLGH 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
+        SLGH 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
+        SLGH 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
+        SLGH 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
+        SLGH 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
+        SLGH 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
 
-    ### rastrigin parameters
-    ##rastrigin:
-        ##SLGH 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
-        ##SLGH 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
-        ##SLGH 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
-        ##SLGH 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
-        ##SLGH 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
-        ##SLGH 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
-        ##SLGH 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
+    # rastrigin parameters
+    rastrigin:
+        SLGH 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
+        SLGH 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
+        SLGH 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
+        SLGH 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
+        SLGH 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
+        SLGH 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
+        SLGH 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
 
-        ##SLGH 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
-        ##SLGH 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
-        ##SLGH 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
-        ##SLGH 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
-        ##SLGH 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
-        ##SLGH 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
-        ##SLGH 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
+        SLGH 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
+        SLGH 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
+        SLGH 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
+        SLGH 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
+        SLGH 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
+        SLGH 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
+        SLGH 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
 
-        ##SLGH 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
-        ##SLGH 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
-        ##SLGH 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
-        ##SLGH 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
-        ##SLGH 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
-        ##SLGH 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
-        ##SLGH 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
+        SLGH 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
+        SLGH 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
+        SLGH 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
+        SLGH 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
+        SLGH 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
+        SLGH 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
+        SLGH 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
 
-        ##SLGH 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
-        ##SLGH 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
-        ##SLGH 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
-        ##SLGH 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
-        ##SLGH 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
-        ##SLGH 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
-        ##SLGH 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
+        SLGH 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
+        SLGH 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
+        SLGH 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
+        SLGH 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
+        SLGH 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
+        SLGH 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
+        SLGH 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
 
-    ### rosenbrock parameters
-    ##rosenbrock:
-        ##SLGH 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
-        ##SLGH 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
-        ##SLGH 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
-        ##SLGH 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
-        ##SLGH 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
-        ##SLGH 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
-        ##SLGH 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
+    # rosenbrock parameters
+    rosenbrock:
+        SLGH 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
+        SLGH 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
+        SLGH 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
+        SLGH 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
+        SLGH 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
+        SLGH 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
+        SLGH 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
 
-        ##SLGH 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
-        ##SLGH 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
-        ##SLGH 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
-        ##SLGH 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
-        ##SLGH 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
-        ##SLGH 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
-        ##SLGH 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
+        SLGH 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
+        SLGH 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
+        SLGH 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
+        SLGH 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
+        SLGH 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
+        SLGH 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
+        SLGH 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
 
-        ##SLGH 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
-        ##SLGH 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
-        ##SLGH 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
-        ##SLGH 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
-        ##SLGH 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
-        ##SLGH 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
-        ##SLGH 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
+        SLGH 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
+        SLGH 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
+        SLGH 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
+        SLGH 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
+        SLGH 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
+        SLGH 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
+        SLGH 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
 
-        ##SLGH 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
-        ##SLGH 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
-        ##SLGH 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
-        ##SLGH 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
-        ##SLGH 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
-        ##SLGH 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
-        ##SLGH 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
+        SLGH 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
+        SLGH 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
+        SLGH 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
+        SLGH 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
+        SLGH 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
+        SLGH 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
+        SLGH 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
 
-    ### schwefel parameters
-    ##schwefel:
-        ##SLGH 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
-        ##SLGH 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
-        ##SLGH 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
-        ##SLGH 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
-        ##SLGH 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
-        ##SLGH 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
-        ##SLGH 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
+    # schwefel parameters
+    schwefel:
+        SLGH 00: {learning_rate: 1.0e-0, sigma: 1.0e-0}
+        SLGH 10: {learning_rate: 1.0e-1, sigma: 1.0e-0}
+        SLGH 20: {learning_rate: 1.0e-2, sigma: 1.0e-0}
+        SLGH 30: {learning_rate: 1.0e-3, sigma: 1.0e-0}
+        SLGH 40: {learning_rate: 1.0e-4, sigma: 1.0e-0}
+        SLGH 50: {learning_rate: 1.0e-5, sigma: 1.0e-0}
+        SLGH 60: {learning_rate: 1.0e-6, sigma: 1.0e-0}
 
-        ##SLGH 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
-        ##SLGH 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
-        ##SLGH 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
-        ##SLGH 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
-        ##SLGH 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
-        ##SLGH 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
-        ##SLGH 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
+        SLGH 01: {learning_rate: 1.0e-0, sigma: 1.0e-1}
+        SLGH 11: {learning_rate: 1.0e-1, sigma: 1.0e-1}
+        SLGH 21: {learning_rate: 1.0e-2, sigma: 1.0e-1}
+        SLGH 31: {learning_rate: 1.0e-3, sigma: 1.0e-1}
+        SLGH 41: {learning_rate: 1.0e-4, sigma: 1.0e-1}
+        SLGH 51: {learning_rate: 1.0e-5, sigma: 1.0e-1}
+        SLGH 61: {learning_rate: 1.0e-6, sigma: 1.0e-1}
 
-        ##SLGH 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
-        ##SLGH 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
-        ##SLGH 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
-        ##SLGH 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
-        ##SLGH 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
-        ##SLGH 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
-        ##SLGH 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
+        SLGH 02: {learning_rate: 1.0e-0, sigma: 1.0e-2}
+        SLGH 12: {learning_rate: 1.0e-1, sigma: 1.0e-2}
+        SLGH 22: {learning_rate: 1.0e-2, sigma: 1.0e-2}
+        SLGH 32: {learning_rate: 1.0e-3, sigma: 1.0e-2}
+        SLGH 42: {learning_rate: 1.0e-4, sigma: 1.0e-2}
+        SLGH 52: {learning_rate: 1.0e-5, sigma: 1.0e-2}
+        SLGH 62: {learning_rate: 1.0e-6, sigma: 1.0e-2}
 
-        ##SLGH 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
-        ##SLGH 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
-        ##SLGH 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
-        ##SLGH 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
-        ##SLGH 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
-        ##SLGH 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
-        ##SLGH 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
+        SLGH 03: {learning_rate: 1.0e-0, sigma: 1.0e-3}
+        SLGH 13: {learning_rate: 1.0e-1, sigma: 1.0e-3}
+        SLGH 23: {learning_rate: 1.0e-2, sigma: 1.0e-3}
+        SLGH 33: {learning_rate: 1.0e-3, sigma: 1.0e-3}
+        SLGH 43: {learning_rate: 1.0e-4, sigma: 1.0e-3}
+        SLGH 53: {learning_rate: 1.0e-5, sigma: 1.0e-3}
+        SLGH 63: {learning_rate: 1.0e-6, sigma: 1.0e-3}
 
