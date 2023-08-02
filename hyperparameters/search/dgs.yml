@@ -2,14 +2,14 @@
 exp_params:
     random_seed: 0
     dim: 100
-    num_tests: 100
+    num_tests: 10
 
 
 # global parameters
 global_params:
-    maxiter: 100
+    maxiter: 10000
     xtol: 1.0e-6
-    ftol: 1.0e-4
+    ftol: 0
     gtol: 1.0e-4
 
 
@@ -18,205 +18,205 @@ functions:
 
     # ackley parameters
     ackley:
-        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 7}
-        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 7}
-        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 7}
-        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 7}
-        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 7}
-        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 7}
-        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 7}
+        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 5}
+        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 5}
+        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 5}
+        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 5}
+        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 5}
+        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 5}
+        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 5}
 
-        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 7}
-        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 7}
-        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 7}
-        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 7}
-        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 7}
-        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 7}
-        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 7}
+        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 5}
+        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 5}
+        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 5}
+        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 5}
+        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 5}
+        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 5}
+        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 5}
 
-        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 7}
-        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 7}
-        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 7}
-        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 7}
-        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 7}
-        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 7}
-        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 7}
+        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 5}
+        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 5}
+        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 5}
+        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 5}
+        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 5}
+        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 5}
+        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 5}
 
-        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 7}
-        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 7}
-        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 7}
-        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 7}
-        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 7}
-        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 7}
-        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 7}
+        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 5}
+        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 5}
+        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 5}
+        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 5}
+        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 5}
+        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 5}
+        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 5}
 
     # levy parameters
     levy:
-        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 7}
-        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 7}
-        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 7}
-        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 7}
-        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 7}
-        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 7}
-        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 7}
+        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 5}
+        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 5}
+        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 5}
+        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 5}
+        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 5}
+        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 5}
+        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 5}
 
-        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 7}
-        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 7}
-        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 7}
-        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 7}
-        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 7}
-        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 7}
-        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 7}
+        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 5}
+        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 5}
+        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 5}
+        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 5}
+        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 5}
+        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 5}
+        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 5}
 
-        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 7}
-        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 7}
-        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 7}
-        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 7}
-        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 7}
-        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 7}
-        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 7}
+        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 5}
+        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 5}
+        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 5}
+        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 5}
+        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 5}
+        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 5}
+        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 5}
 
-        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 7}
-        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 7}
-        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 7}
-        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 7}
-        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 7}
-        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 7}
-        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 7}
+        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 5}
+        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 5}
+        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 5}
+        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 5}
+        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 5}
+        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 5}
+        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 5}
 
     # michalewicz parameters
     michalewicz:
-        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 7}
-        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 7}
-        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 7}
-        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 7}
-        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 7}
-        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 7}
-        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 7}
+        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 5}
+        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 5}
+        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 5}
+        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 5}
+        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 5}
+        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 5}
+        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 5}
 
-        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 7}
-        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 7}
-        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 7}
-        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 7}
-        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 7}
-        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 7}
-        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 7}
+        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 5}
+        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 5}
+        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 5}
+        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 5}
+        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 5}
+        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 5}
+        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 5}
 
-        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 7}
-        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 7}
-        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 7}
-        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 7}
-        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 7}
-        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 7}
-        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 7}
+        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 5}
+        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 5}
+        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 5}
+        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 5}
+        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 5}
+        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 5}
+        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 5}
 
-        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 7}
-        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 7}
-        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 7}
-        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 7}
-        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 7}
-        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 7}
-        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 7}
+        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 5}
+        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 5}
+        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 5}
+        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 5}
+        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 5}
+        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 5}
+        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 5}
 
     # rastrigin parameters
     rastrigin:
-        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 7}
-        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 7}
-        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 7}
-        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 7}
-        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 7}
-        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 7}
-        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 7}
+        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 5}
+        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 5}
+        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 5}
+        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 5}
+        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 5}
+        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 5}
+        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 5}
 
-        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 7}
-        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 7}
-        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 7}
-        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 7}
-        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 7}
-        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 7}
-        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 7}
+        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 5}
+        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 5}
+        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 5}
+        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 5}
+        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 5}
+        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 5}
+        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 5}
 
-        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 7}
-        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 7}
-        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 7}
-        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 7}
-        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 7}
-        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 7}
-        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 7}
+        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 5}
+        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 5}
+        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 5}
+        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 5}
+        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 5}
+        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 5}
+        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 5}
 
-        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 7}
-        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 7}
-        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 7}
-        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 7}
-        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 7}
-        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 7}
-        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 7}
+        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 5}
+        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 5}
+        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 5}
+        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 5}
+        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 5}
+        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 5}
+        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 5}
 
     # rosenbrock parameters
     rosenbrock:
-        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 7}
-        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 7}
-        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 7}
-        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 7}
-        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 7}
-        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 7}
-        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 7}
+        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 5}
+        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 5}
+        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 5}
+        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 5}
+        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 5}
+        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 5}
+        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 5}
 
-        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 7}
-        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 7}
-        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 7}
-        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 7}
-        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 7}
-        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 7}
-        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 7}
+        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 5}
+        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 5}
+        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 5}
+        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 5}
+        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 5}
+        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 5}
+        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 5}
 
-        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 7}
-        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 7}
-        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 7}
-        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 7}
-        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 7}
-        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 7}
-        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 7}
+        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 5}
+        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 5}
+        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 5}
+        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 5}
+        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 5}
+        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 5}
+        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 5}
 
-        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 7}
-        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 7}
-        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 7}
-        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 7}
-        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 7}
-        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 7}
-        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 7}
+        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 5}
+        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 5}
+        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 5}
+        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 5}
+        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 5}
+        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 5}
+        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 5}
 
     # schwefel parameters
     schwefel:
-        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 7}
-        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 7}
-        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 7}
-        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 7}
-        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 7}
-        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 7}
-        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 7}
+        DGS 00: {learning_rate: 1.0e-0, sigma: 1.0e-0, quad_points: 5}
+        DGS 10: {learning_rate: 1.0e-1, sigma: 1.0e-0, quad_points: 5}
+        DGS 20: {learning_rate: 1.0e-2, sigma: 1.0e-0, quad_points: 5}
+        DGS 30: {learning_rate: 1.0e-3, sigma: 1.0e-0, quad_points: 5}
+        DGS 40: {learning_rate: 1.0e-4, sigma: 1.0e-0, quad_points: 5}
+        DGS 50: {learning_rate: 1.0e-5, sigma: 1.0e-0, quad_points: 5}
+        DGS 60: {learning_rate: 1.0e-6, sigma: 1.0e-0, quad_points: 5}
 
-        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 7}
-        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 7}
-        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 7}
-        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 7}
-        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 7}
-        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 7}
-        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 7}
+        DGS 01: {learning_rate: 1.0e-0, sigma: 1.0e-1, quad_points: 5}
+        DGS 11: {learning_rate: 1.0e-1, sigma: 1.0e-1, quad_points: 5}
+        DGS 21: {learning_rate: 1.0e-2, sigma: 1.0e-1, quad_points: 5}
+        DGS 31: {learning_rate: 1.0e-3, sigma: 1.0e-1, quad_points: 5}
+        DGS 41: {learning_rate: 1.0e-4, sigma: 1.0e-1, quad_points: 5}
+        DGS 51: {learning_rate: 1.0e-5, sigma: 1.0e-1, quad_points: 5}
+        DGS 61: {learning_rate: 1.0e-6, sigma: 1.0e-1, quad_points: 5}
 
-        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 7}
-        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 7}
-        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 7}
-        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 7}
-        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 7}
-        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 7}
-        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 7}
+        DGS 02: {learning_rate: 1.0e-0, sigma: 1.0e-2, quad_points: 5}
+        DGS 12: {learning_rate: 1.0e-1, sigma: 1.0e-2, quad_points: 5}
+        DGS 22: {learning_rate: 1.0e-2, sigma: 1.0e-2, quad_points: 5}
+        DGS 32: {learning_rate: 1.0e-3, sigma: 1.0e-2, quad_points: 5}
+        DGS 42: {learning_rate: 1.0e-4, sigma: 1.0e-2, quad_points: 5}
+        DGS 52: {learning_rate: 1.0e-5, sigma: 1.0e-2, quad_points: 5}
+        DGS 62: {learning_rate: 1.0e-6, sigma: 1.0e-2, quad_points: 5}
 
-        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 7}
-        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 7}
-        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 7}
-        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 7}
-        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 7}
-        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 7}
-        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 7}
+        DGS 03: {learning_rate: 1.0e-0, sigma: 1.0e-3, quad_points: 5}
+        DGS 13: {learning_rate: 1.0e-1, sigma: 1.0e-3, quad_points: 5}
+        DGS 23: {learning_rate: 1.0e-2, sigma: 1.0e-3, quad_points: 5}
+        DGS 33: {learning_rate: 1.0e-3, sigma: 1.0e-3, quad_points: 5}
+        DGS 43: {learning_rate: 1.0e-4, sigma: 1.0e-3, quad_points: 5}
+        DGS 53: {learning_rate: 1.0e-5, sigma: 1.0e-3, quad_points: 5}
+        DGS 63: {learning_rate: 1.0e-6, sigma: 1.0e-3, quad_points: 5}
 

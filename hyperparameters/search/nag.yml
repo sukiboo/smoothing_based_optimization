@@ -2,14 +2,14 @@
 exp_params:
     random_seed: 0
     dim: 100
-    num_tests: 100
+    num_tests: 10
 
 
 # global parameters
 global_params:
-    maxiter: 100
+    maxiter: 10000
     xtol: 1.0e-6
-    ftol: 1.0e-4
+    ftol: 0
     gtol: 1.0e-4
 
 
