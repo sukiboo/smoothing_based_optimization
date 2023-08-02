@@ -4,6 +4,7 @@ import tqdm
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pickle
 import yaml
 import os
 
@@ -102,17 +103,18 @@ class BenchmarkAlgorithms:
 
 if __name__ == '__main__':
 
-    config_file = '100d.yml'
+    config_file = '100d'
     num_tests = None
 
     # read configs
-    configs = yaml.safe_load(open(f'./hyperparameters/{config_file}'))
+    configs = yaml.safe_load(open(f'./hyperparameters/{config_file}.yml'))
     random_seed = configs['exp_params']['random_seed']
     dim = configs['exp_params']['dim']
     num_tests = configs['exp_params']['num_tests'] if num_tests is None else num_tests
     global_params = configs['global_params']
 
     # benchmark algorithms
+    logs = {}
     for function, algorithms in configs['functions'].items():
         function_params = {'function_name': function, 'dim': dim}
         # update each algorithm with global parameters
@@ -120,4 +122,10 @@ if __name__ == '__main__':
             algortihm_params.update(global_params)
         ba = BenchmarkAlgorithms(algorithms, function_params, num_tests, random_seed)
         ba.visualize(show=False)
+        logs[function] = ba.vals
+
+    # save logs
+    os.makedirs('./logs/', exist_ok=True)
+    with open(f'./logs/{config_file}.pkl', 'wb') as logfile:
+        pickle.dump(logs, logfile)
 
