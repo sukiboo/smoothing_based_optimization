@@ -114,7 +114,7 @@ if __name__ == '__main__':
     global_params = configs['global_params']
 
     # benchmark algorithms
-    logs = {}
+    os.makedirs(f'./logs/{config_file}/', exist_ok=True)
     for function, algorithms in configs['functions'].items():
         function_params = {'function_name': function, 'dim': dim}
         # update each algorithm with global parameters
@@ -122,10 +122,7 @@ if __name__ == '__main__':
             algortihm_params.update(global_params)
         ba = BenchmarkAlgorithms(algorithms, function_params, num_tests, random_seed)
         ba.visualize(show=False)
-        logs[function] = ba.vals
-
-    # save logs
-    os.makedirs('./logs/', exist_ok=True)
-    with open(f'./logs/{config_file}.pkl', 'wb') as logfile:
-        pickle.dump(logs, logfile)
+        # save logs
+        with open(f'./logs/{config_file}/{function}.pkl', 'wb') as logfile:
+            pickle.dump(ba.vals, logfile)
 
