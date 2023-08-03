@@ -9,7 +9,7 @@ from scipy.optimize import OptimizeResult
 from scipy.optimize._numdiff import approx_derivative
 
 
-def DGS(fun, x0, args=(), learning_rate=.01, sigma=.1, quad_points=7,
+def DGS(fun, x0, args=(), learning_rate=.01, sigma=.1, quad_points=5,
         maxiter=1000, xtol=1e-6, ftol=1e-4, gtol=1e-4, callback=None, **options):
     """
     Minimize a scalar function using the DGS optimizer.

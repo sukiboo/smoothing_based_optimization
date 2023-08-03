@@ -9,7 +9,7 @@ from scipy.optimize import OptimizeResult
 from scipy.optimize._numdiff import approx_derivative
 
 
-def SLGH(fun, x0, args=(), learning_rate=.1, sigma=.1, num_points=100,
+def SLGH(fun, x0, args=(), learning_rate=.1, sigma=.1, num_points=1,
          learning_rate_sigma=.0001, num_points_sigma=1, sigma_decay=.999,
          maxiter=1000, xtol=1e-6, ftol=1e-4, gtol=1e-4, callback=None, **options):
     """
@@ -78,8 +78,8 @@ def SLGH(fun, x0, args=(), learning_rate=.1, sigma=.1, num_points=100,
             g_t = (np.dot(v,v) - dim) * (fun(x + sigma*v) - fun(x)) / sigma
             g_sigma.append(g_t)
 
-        ##sigma -= learning_rate_sigma * np.mean(g_sigma)
-        sigma = min(sigma - learning_rate_sigma * np.mean(g_sigma), sigma_decay * sigma)
+        sigma -= learning_rate_sigma * np.mean(g_sigma)
+        ##sigma = min(sigma - learning_rate_sigma * np.mean(g_sigma), sigma_decay * sigma)
         sigma = max(sigma, 1e-4)
 
         # update minimizer
