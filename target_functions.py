@@ -59,8 +59,6 @@ def target_function(function_params, random_seed=None):
     # Michalewicz function
     elif function_name == 'michalewicz':
         m = 10 # default parameter
-        ##fun = lambda x: np.sum(-np.sin(x[d]) * np.sin(d * x[d]**2 / np.pi)**m\
-                               ##for d in range(dim))
         fun = lambda x: -np.sum(np.sin(x) * np.sin(np.arange(1,dim+1) * x**2 / np.pi)**(2*m))
         x_dom = [[0, np.pi]] * dim
         x_min = [None] * dim
@@ -73,16 +71,13 @@ def target_function(function_params, random_seed=None):
 
     # Rosenbrock function
     elif function_name == 'rosenbrock':
-        ##fun = lambda x: np.sum(100 * (x[d+1] - x[d]**2)**2 + (x[d] - 1)**2 for d in range(dim-1))
         fun = lambda x: np.sum(100 * (x[1:] - x[:-1]**2)**2 + (x[:-1] - 1)**2)
         x_dom = [[-5, 10]] * dim
         x_min = [1] * dim
 
-    # Schwefel function
+    # Schwefel function -- taking absolute value to ensure the global minimum existance
     elif function_name == 'schwefel':
-        ##fun = lambda x: 418.9829*dim\
-            ##- np.sum(x[d] * np.sin(np.sqrt(np.abs(x[d]))) for d in range(dim))
-        fun = lambda x: 418.9829*dim - np.sum(x * np.sin(np.sqrt(np.abs(x))))
+        fun = lambda x: np.abs(418.9829*dim - np.sum(x * np.sin(np.sqrt(np.abs(x)))))
         x_dom = [[-500, 500]] * dim
         x_min = [420.9687] * dim
 
