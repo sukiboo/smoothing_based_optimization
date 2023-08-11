@@ -8,9 +8,9 @@ exp_params:
 # global parameters
 global_params:
     maxiter: 10000
-    xtol: 0
+    xtol: 1.0e-6
     ftol: 0
-    gtol: 0
+    gtol: 1.0e-4
     num_points: 1
     num_points_sigma: 1
     learning_rate_sigma: .0001
