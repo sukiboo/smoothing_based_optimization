@@ -84,14 +84,16 @@ def SLGH(fun, x0, args=(), learning_rate=.1, sigma=.1, num_points=1,
 
         # update minimizer
         x -= learning_rate * grad_sigma
-        return x, grad_sigma
+        ##return x, grad_sigma
+        return x, grad_sigma, np.mean(g_sigma)
 
     # iteratively optimize target function
     success = False
     for _ in range(maxiter):
         x = xk.copy()
+        sigma_ = sigma
         fval = fk
-        xk, gfk = step(x.copy())
+        xk, gfk, gsk = step(x.copy())
         fk = fun(xk)
         if callback is not None:
             callback(xk)
@@ -99,11 +101,11 @@ def SLGH(fun, x0, args=(), learning_rate=.1, sigma=.1, num_points=1,
             ##print(f'{t:2d}: fun(xk) = {fk:.4f},  sigma = {sigma:.2e}')
 
         # check termination conditions
-        if np.linalg.norm(gfk, np.inf) < gtol:
+        if max(np.linalg.norm(gfk, np.inf), np.abs(gsk)) < gtol:
             msg = 'Optimization terminated succesfully.'
             success = True
             break
-        if np.linalg.norm(x - xk, np.inf) < xtol:
+        if max(np.linalg.norm(x - xk, np.inf), np.abs(sigma_ - sigma)) < xtol:
             msg = 'Optimization terminated due to x-tolerance.'
             break
         if np.abs((fval - fk) / (fval + 1e-8)) < ftol:
