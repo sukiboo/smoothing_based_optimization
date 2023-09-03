@@ -31,7 +31,7 @@ def visualize(data, function_name, dim, noise_level, percentile=(.25,.5,.75), sh
         plt.fill_between(range(alg_min.size), alg_min, alg_max, alpha=.25)
 
     # configure scale and axis depending on the function
-    ##ax.set_title(f'{function_name} {dim}d')
+    ##ax.set_title(f'{function_name.capitalize()} {dim}d')
     ax.set_ylim(style[function_name]['ylim'])
     if style[function_name]['scale'] == 'sqrt':
         ax.set_yscale('function', functions=(np.sqrt, lambda x: x**2))
