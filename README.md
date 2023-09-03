@@ -1,10 +1,11 @@
 # Smoothing Based Optimization
 
-~~A bunch of scripts to play with smoothing-based optimization techniques.~~
-Actually, we're now making it a legitimate paper.
+Source code for the numerical results presented in the paper "Gaussian smoothing gradient descent for minimizing high-dimensional non-convex functions".
 
 Benchmark different types of optimization algorithms on various test functions.
 Experiment results will be saved to the `./images/` folder that will be created.
+
+![opt](https://github.com/sukiboo/smoothing_based_optimization/assets/38059493/cf02edcc-fb36-43ca-ae19-06155f848f15)
 
 ### File Organization
 
@@ -12,6 +13,7 @@ Currently includes the following files:
 * `target_functions.py` -- set up a target function and sample an initial guess
 * `benchmark_algorithms.py` -- compare optimization algoritms on series of tests
 * `hyperparameter_search.py` -- test different hyperparameters for each function and algorithm
+* `visualization.py` -- plot optimization values from the logged data
 
 Implemented algorithms (in `./algorithms/`):
 * `adam.py` -- Adam optimizer
@@ -21,7 +23,7 @@ Implemented algorithms (in `./algorithms/`):
 * `adgs.py` -- DGS with exponential decay on sigma
 * `lsgd.py` -- Laplacian Smooth Gradient Descent
 * `mcgs.py` -- Monte Carlo Gaussian Smoothing
-* `slgh.py` -- Single Loop Gaussian Homotopy (Andrew why are you doing this to me)
+* `slgh.py` -- Single Loop Gaussian Homotopy
 
 Old files that are now in `./extra_scripts/`:
 * `main.py` -- use to launch numerical optimization
