@@ -136,13 +136,13 @@ def initial_guess(x_dom, random_seed):
     return x0
 
 
-def setup_optimization(function_params, random_seed, noise=False):
+def setup_optimization(function_params, random_seed, noise=0):
     """Return a target function and an initial guess"""
-    fun, x_min, x_dom = target_function(function_params, random_seed)
+    target_fun, x_min, x_dom = target_function(function_params, random_seed)
     x0 = initial_guess(x_dom, random_seed)
-    if not noise:
-        return fun, x0
-    else:
-        # add random noise
-        fun2 = lambda x: fun(x) * (.9999 + .0002*np.random.rand())
-        return fun2, x0
+
+    # add random noise
+    noise_fun = lambda x: noise * (2*np.random.rand() - 1)
+    fun = lambda x: target_fun(x) * (1 + noise_fun(x))
+
+    return fun, x0

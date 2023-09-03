@@ -9,7 +9,7 @@ exp_params:
 global_params:
     maxiter: 10000
     xtol: 1.0e-6
-    ftol: 1.0e-4
+    ftol: 0
     gtol: 1.0e-4
 
 
@@ -21,7 +21,7 @@ functions:
         MCGS: {learning_rate: 1.0e-0, sigma: 1.}
         DGS: {learning_rate: 1.0e-1, sigma: .1}
         LSGD: {learning_rate: 1.0e-1, sigma: .001}
-		SLGH: {learning_rate: 1.0e-0, sigma: 1.}
+        SLGH: {learning_rate: 1.0e-0, sigma: 1.}
         NAG: {learning_rate: 1.0e-3, beta: .5}
         Adam: {learning_rate: 1.0e-4, beta1: .9, beta2: .999}
         RMSProp: {learning_rate: 1.0e-4, beta: .9}
@@ -33,7 +33,7 @@ functions:
         MCGS: {learning_rate: 1.0e-1, sigma: .01}
         DGS: {learning_rate: 1.0e-1, sigma: .1}
         LSGD: {learning_rate: 1.0e-1, sigma: .01}
-		SLGH: {learning_rate: 1.0e-3, sigma: .1}
+        SLGH: {learning_rate: 1.0e-3, sigma: .1}
         NAG: {learning_rate: 1.0e-4, beta: .5}
         Adam: {learning_rate: 1.0e-3, beta1: .9, beta2: .999}
         RMSProp: {learning_rate: 1.0e-3, beta: .9}
@@ -45,7 +45,7 @@ functions:
         MCGS: {learning_rate: 1.0e-4, sigma: .01}
         DGS: {learning_rate: 1.0e-4, sigma: .01}
         LSGD: {learning_rate: 1.0e-5, sigma: .1}
-		SLGH: {learning_rate: 1.0e-6, sigma: .001}
+        SLGH: {learning_rate: 1.0e-6, sigma: .001}
         NAG: {learning_rate: 1.0e-5, beta: .5}
         Adam: {learning_rate: 1.0e-4, beta1: .9, beta2: .999}
         RMSProp: {learning_rate: 1.0e-4, beta: .9}
@@ -57,8 +57,8 @@ functions:
         MCGS: {learning_rate: 1.0e-3, sigma: 1.}
         DGS: {learning_rate: 1.0e-5, sigma: .001}
         LSGD: {learning_rate: 1.0e-5, sigma: .001}
-		SLGH: {learning_rate: 1.0e-4, sigma: .01}
-        NAG: {learning_rate: 1.03-5, beta: .5}
+        SLGH: {learning_rate: 1.0e-4, sigma: .01}
+        NAG: {learning_rate: 1.0e-5, beta: .5}
         Adam: {learning_rate: 1.0e-4, beta1: .9, beta2: .999}
         RMSProp: {learning_rate: 1.0e-4, beta: .9}
         BFGS: {}
@@ -68,8 +68,8 @@ functions:
     rosenbrock:
         MCGS: {learning_rate: 1.0e-5, sigma: 1.}
         DGS: {learning_rate: 1.0e-5, sigma: 1.}
-        LSGD: {learning_rate: 1.0-5, sigma: 1.}
-		SLGH: {learning_rate: 1.0e-5, sigma: 1.}
+        LSGD: {learning_rate: 1.0e-5, sigma: 1.}
+        SLGH: {learning_rate: 1.0e-5, sigma: 1.}
         NAG: {learning_rate: 1.0e-5, beta: .5}
         Adam: {learning_rate: 1.0e-1, beta1: .9, beta2: .999}
         RMSProp: {learning_rate: 1.0e-2, beta: .9}
@@ -81,10 +81,10 @@ functions:
         MCGS: {learning_rate: 1.0e-0, sigma: .001}
         DGS: {learning_rate: 1.0e-2, sigma: .001}
         LSGD: {learning_rate: 1.0e-1, sigma: 1.}
-		SLGH: {learning_rate: 1.0e-0, sigma: .1}
+        SLGH: {learning_rate: 1.0e-2, sigma: .001}
         NAG: {learning_rate: 1.0e-3, beta: .5}
         Adam: {learning_rate: 1.0e-1, beta1: .9, beta2: .999}
-        RMSProp: {learning_rate: 1.0e-1 beta: .9}
+        RMSProp: {learning_rate: 1.0e-1, beta: .9}
         BFGS: {}
         CG: {}
 
