@@ -5,7 +5,7 @@ Source code for the numerical results presented in the paper "Gaussian smoothing
 Benchmark different types of optimization algorithms on various test functions.
 Experiment results will be saved to the `./images/` folder that will be created.
 
-![opt](https://github.com/sukiboo/smoothing_based_optimization/assets/38059493/cf02edcc-fb36-43ca-ae19-06155f848f15)
+![opt](https://github.com/sukiboo/smoothing_based_optimization/assets/38059493/21bbdf76-3242-4c4f-9a48-03d1aa87b46d)
 
 ### File Organization
 
