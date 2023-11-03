@@ -1,6 +1,6 @@
 # Smoothing Based Optimization
 
-Source code for the numerical results presented in the paper "Gaussian smoothing gradient descent for minimizing high-dimensional non-convex functions".
+Source code for the numerical results presented in the paper "[Gaussian smoothing gradient descent for minimizing high-dimensional non-convex functions](https://arxiv.org/abs/2311.00521)".
 
 Benchmark different types of optimization algorithms on various test functions.
 Experiment results will be saved to the `./images/` folder that will be created.
